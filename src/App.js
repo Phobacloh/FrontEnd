@@ -7,7 +7,7 @@ import Home from "./pages/HomePage";
 // import About from "./pages/AboutPage";
 import Project from "./pages/ProjectPage";
 import Nav from "./components/nav/Nav";
-
+import "./App.css";
 /**
  * Main app compnent
  */
