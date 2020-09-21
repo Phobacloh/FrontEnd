@@ -1,6 +1,7 @@
 import React from "react";
 import { allProjects } from "../data";
 import ProjectCard from "../components/projectcard/ProjectCard";
+// import Logo from "../components/Logo";
 
 // import "./ProjectCard.css";
 
