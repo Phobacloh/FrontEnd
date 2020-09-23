@@ -7,13 +7,20 @@
   /* border: solid; */
 }
 
+h3 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 35px;
+}
 body {
   background-image: url("ricepaper.png");
 }
 
 #project-list {
   display: grid;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 32% 32% 32%;
   column-gap: 10px;
   row-gap: 10px;
 }

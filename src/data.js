@@ -19,7 +19,7 @@ export const allProjects = [
         project_id: 2,
       },
     ],
-    owner: 1,
+    owner: "Admin",
     category: "Young Adult",
   },
   {
@@ -34,7 +34,7 @@ export const allProjects = [
     date_closed: "2020-10-11T13:37:00Z",
     sample: "Some additional content",
     pledges: [],
-    owner: 1,
+    owner: "Admin",
     category: "Graphic Novels & Comics",
   },
   {
@@ -48,7 +48,22 @@ export const allProjects = [
     date_closed: "2020-03-20T14:28:23.159522Z",
     sample: "Content",
     pledges: [],
-    owner: 3,
+    owner: "Matt",
+    category: "Mystery",
+  },
+  {
+    id: 9,
+    title: "Great Novel",
+    description: "Still good",
+    goal: 3460,
+    image:
+      "https://www.insidehighered.com/sites/default/server_files/styles/large-copy/public/media/iStock-873507500.jpg?itok=qLq_z4Cd",
+    is_open: true,
+    date_created: "2020-09-15T13:22:24.905398Z",
+    date_closed: "2020-03-20T14:28:23.159522Z",
+    sample: "Lots and lots of content",
+    pledges: [],
+    owner: "Matt",
     category: "Mystery",
   },
 ];
@@ -67,7 +82,7 @@ export const oneProject = {
   pledges: [
     {
       id: 2,
-      amount: 4000,
+      amount: 5000,
       comment: "Take my money!",
       //you need to fix supporter to show in pledges
       supporter: "Anna",
@@ -75,6 +90,6 @@ export const oneProject = {
       project_id: 2,
     },
   ],
-  owner: 1,
+  owner: "Admin",
   category: "Young Adult",
 };
