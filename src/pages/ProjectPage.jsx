@@ -19,14 +19,16 @@ function ProjectPage() {
       });
   }, [id]);
   return (
-    <div>
-      <img src={projectData.image} />
-      <h2>{projectData.title}</h2>
-      <h3>{projectData.owner}</h3>
-      <h3>Genre: {projectData.category}</h3>
-      <p>{projectData.description}</p>
-      <h3>Funding Close Date: {projectData.date_closed}</h3>
-
+    <div className="project_details">
+      <img className="project_image" src={projectData.image} />
+      <div className="project_summary_details">
+        <h2>{projectData.title}</h2>
+        <h3>{projectData.owner}</h3>
+        <p>{projectData.category}</p>
+        <p>{projectData.description}</p>
+      </div>
+      <h3>Funding Close Date:</h3>
+      <p>{projectData.date_closed}</p>
       <h3> Pledges:</h3>
       <ul>
         {projectData.pledges.map((pledgeData) => {
@@ -37,7 +39,8 @@ function ProjectPage() {
           );
         })}
       </ul>
-      <h3>Sample: {projectData.sample}</h3>
+      <h3>Sample:</h3>
+      <p>{projectData.sample}</p>
       <h3>{`Status: ${projectData.is_open}`}</h3>
     </div>
   );

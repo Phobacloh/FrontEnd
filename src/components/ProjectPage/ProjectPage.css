@@ -1,0 +1,12 @@
+.project_details {
+  display: flex;
+  flex-direction: row;
+}
+
+.project_image {
+  width: 50%;
+}
+.project_summary_details {
+  display: flex;
+  flex-direction: column;
+}

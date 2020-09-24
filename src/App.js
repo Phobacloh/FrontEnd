@@ -21,10 +21,14 @@ function App() {
       <Router>
         <div>
           <Nav />
+          {/* <Categories/> */}
           <Switch>
             <Route path="/project/:id">
               <Project />
             </Route>
+            {/* <Route>
+
+            </Route> */}
             <Route path="/">
               <Home />
             </Route>
