@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function LoginForm() {
   //variables
@@ -6,6 +7,7 @@ function LoginForm() {
     username: "",
     password: "",
   });
+  const history = useHistory();
 
   //method
   const handleChange = (e) => {
@@ -16,17 +18,26 @@ function LoginForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (credentials.username && credentials.password) {
-      fetch(`${process.env.REACT_APP_API_URL}api-token-auth/`, {
+  const postData = async () => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}api-token-auth/`,
+      {
         method: "post",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(credentials),
-      }).then((response) => {
-        console.log(response.json());
+      }
+    );
+    return response.json();
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (credentials.username && credentials.password) {
+      postData().then((response) => {
+        window.localStorage.setItem("token", response.token);
+        history.push("/");
       });
     }
   };
