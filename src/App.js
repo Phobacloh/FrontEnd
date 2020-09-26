@@ -11,6 +11,7 @@ import Logo from "./BookShelves-Tagline.png";
 
 import "./App.css";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 /**
  * Main app component
  */
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route path="/login">
               <LoginPage />
+            </Route>
+            <Route path="/register">
+              <RegisterPage />
             </Route>
             {/* <Route>
 
