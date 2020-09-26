@@ -10,6 +10,7 @@ import Nav from "./components/nav/Nav";
 import Logo from "./BookShelves-Tagline.png";
 
 import "./App.css";
+import LoginPage from "./pages/LoginPage";
 /**
  * Main app component
  */
@@ -25,6 +26,9 @@ function App() {
           <Switch>
             <Route path="/project/:id">
               <Project />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
             </Route>
             {/* <Route>
 
