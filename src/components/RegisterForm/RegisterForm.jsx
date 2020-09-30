@@ -46,7 +46,7 @@ function RegisterForm() {
       postDataRegister().then((response) => {
         console.log(response);
         window.localStorage.setItem("user", response.username);
-        history.push("/");
+        history.push("/login");
       });
     }
   };

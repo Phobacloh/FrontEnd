@@ -12,6 +12,7 @@ import Logo from "./BookShelves-Tagline.png";
 import "./App.css";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import PostProjectPage from "./pages/PostProjectPage";
 /**
  * Main app component
  */
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route path="/register">
               <RegisterPage />
+            </Route>
+            <Route path="/post_project">
+              <PostProjectPage />
             </Route>
             {/* <Route>
 

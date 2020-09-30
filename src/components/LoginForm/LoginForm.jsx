@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
   //variables
@@ -36,13 +37,16 @@ function LoginForm() {
     e.preventDefault();
     if (credentials.username && credentials.password) {
       postData().then((response) => {
+        console.log(response);
         window.localStorage.setItem("token", response.token);
+        window.localStorage.setItem("user", credentials.username);
         if (response.token != null) {
           history.push("/");
         }
       });
     }
   };
+
   //template
   return (
     <form>
@@ -67,6 +71,7 @@ function LoginForm() {
       <button type="submit" onClick={handleSubmit}>
         Login
       </button>
+      <Link to="/register">Sign Up</Link>
     </form>
   );
 }

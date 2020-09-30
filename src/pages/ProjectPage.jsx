@@ -20,7 +20,7 @@ function ProjectPage() {
   }, [id]);
   return (
     <div className="project_details">
-      <img className="project_image" src={projectData.image} />
+      <img className="project_image" alt="project" src={projectData.image} />
       <div className="project_summary_details">
         <h2>{projectData.title}</h2>
         <h3>{projectData.owner}</h3>
