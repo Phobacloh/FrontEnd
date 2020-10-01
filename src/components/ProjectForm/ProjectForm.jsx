@@ -8,6 +8,8 @@ import "./ProjectForm.css";
 function ProjectForm() {
   //variables
 
+  const token = window.localStorage.getItem("token");
+
   const [credentials, setCredentials] = useState({
     title: "",
     description: "",
@@ -34,7 +36,7 @@ function ProjectForm() {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Token 75c8d4fc87a1fcf2a1aa507548219ee4b4062a07`,
+        Authorization: `Token ${token}`,
       },
       body: JSON.stringify(credentials),
     });
@@ -55,7 +57,8 @@ function ProjectForm() {
       //   credentials.category
     ) {
       postDataProject().then((response) => {
-        // window.localStorage.setItem("token", response.token);
+        window.localStorage.setItem("token", response.token);
+        console.log(response);
         // window.localStorage.setItem("title", credentials.title);
 
         // if (response.token != null) {
