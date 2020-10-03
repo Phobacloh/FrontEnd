@@ -9,26 +9,30 @@ function ProjectForm() {
   //variables
 
   const token = window.localStorage.getItem("token");
+  console.log(token);
 
-  const [credentials, setCredentials] = useState({
+  const [project, setProject] = useState({
     title: "",
     description: "",
     goal: "",
     image: "",
-    date_closed: "2020-09-30T10:41:55.213982Z",
+    date_closed: "",
     sample: "",
-    category: "Mystery",
-    is_open: false,
+    category: "",
+    is_open: null,
   });
   const history = useHistory();
 
   //method
   const handleChange = (e) => {
+    console.log(e);
     const { id, value } = e.target;
-    setCredentials((prevCredentials) => ({
-      ...prevCredentials,
+    setProject((prevProject) => ({
+      ...prevProject,
       [id]: value,
     }));
+    const sel = document.getElementById("categories");
+    console.log(sel.value);
   };
 
   const postDataProject = async () => {
@@ -36,9 +40,9 @@ function ProjectForm() {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Token ${token}`,
+        Authorization: `token ${token}`,
       },
-      body: JSON.stringify(credentials),
+      body: JSON.stringify(project),
     });
     console.log(response.status);
     return response.json();
@@ -46,18 +50,21 @@ function ProjectForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    project.category = "Mystery";
+    project.date_closed = "2020-09-19T13:35:00Z";
+    project.is_open = true;
     if (
-      credentials.title
-      //   credentials.description &&
-      //   credentials.goal &&
-      //   credentials.image &&
-      //   credentials.is_open &&
-      //   credentials.date_closed &&
-      //   credentials.sample &&
-      //   credentials.category
+      project.title
+      //   project.description &&
+      //   project.goal &&
+      //   project.image &&
+      //   project.is_open &&
+      //   project.date_closed &&
+      //   project.sample &&
+      //   project.category
     ) {
       postDataProject().then((response) => {
-        window.localStorage.setItem("token", response.token);
         console.log(response);
         // window.localStorage.setItem("title", credentials.title);
 
@@ -109,10 +116,10 @@ function ProjectForm() {
       <div>
         <label htmlFor="date_closed">Closing Date:</label>
         <input
-          type="date"
+          type="datetime-local"
           id="date_closed"
           placeholder="Closing Date"
-          //   onChange={handleChange}
+          onChange={handleChange}
         />
       </div>
       <div>
@@ -126,7 +133,7 @@ function ProjectForm() {
       </div>
       <div>
         <label htmlFor="is_open">Open for donations?:</label>
-        {/* <select type="select" id="is_open" onChange={handleChange}> */}
+        <select type="select" id="is_open" onChange={handleChange} />
         <select type="select" id="is_open">
           <option value="true">Yes</option>
           <option value="false">No</option>
@@ -138,7 +145,7 @@ function ProjectForm() {
           type="select"
           id="genre"
           placeholder="Genre!"
-          //   onChange={handleChange}
+          onChange={handleChange}
         >
           <option value="Fantasy">Fantasy </option>
           <option value="Graphic Novels & Comics">

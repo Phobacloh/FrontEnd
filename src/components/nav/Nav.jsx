@@ -1,12 +1,39 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  isAuthenticated,
+  clearStorage,
+  getStorage,
+} from "../utils/localStorage.jsx";
+// import "./Nav.css";
 
 function Nav() {
+  //variables
+  const [isloggedin, setisloggedin] = useState(false);
+  const location = useLocation();
+  //method
+  useEffect(() => {
+    isAuthenticated() ? setisloggedin(true) : setisloggedin(false);
+  }, [location]);
+  const handleLogout = () => {
+    clearStorage();
+  };
+  //template
   return (
     <div>
       <nav className="nav_bar">
-        <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
+        <Link id="home-link" to="/">
+          Home
+        </Link>
+        {isloggedin ? (
+          <Link id="nav-link" to="/login" onClick={handleLogout}>
+            Logout {getStorage("user")}
+          </Link>
+        ) : (
+          <Link id="nav-link" to="/login">
+            Login
+          </Link>
+        )}
         <Link to="/post_project">New Project</Link>
       </nav>
     </div>

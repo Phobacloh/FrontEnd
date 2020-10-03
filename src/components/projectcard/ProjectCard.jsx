@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./ProjectCard.css";
 
 function ProjectCard(props) {
-  const { projectData, categories } = props;
+  const { projectData } = props;
   return (
     <div>
       <div className="project-card">

@@ -13,6 +13,8 @@ import "./App.css";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import PostProjectPage from "./pages/PostProjectPage";
+import ProfilePage from "./pages/ProfilePage";
+import CategoriesPage from "./pages/CategoriesPage";
 /**
  * Main app component
  */
@@ -37,6 +39,12 @@ function App() {
             </Route>
             <Route path="/post_project">
               <PostProjectPage />
+            </Route>
+            <Route path="/profile/:id">
+              <ProfilePage />
+            </Route>
+            <Route path="/categories">
+              <CategoriesPage />
             </Route>
             {/* <Route>
 
