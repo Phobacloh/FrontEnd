@@ -19,7 +19,6 @@ function ProjectForm() {
     date_closed: "",
     sample: "",
     category: "",
-    is_open: null,
   });
   const history = useHistory();
 
@@ -27,6 +26,7 @@ function ProjectForm() {
   const handleChange = (e) => {
     console.log(e);
     const { id, value } = e.target;
+    console.log("---->", id, value);
     setProject((prevProject) => ({
       ...prevProject,
       [id]: value,
@@ -48,9 +48,16 @@ function ProjectForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(project.date_closed);
+    console.log(project.title);
+    console.log(project.category);
 
-    project.category = "Mystery";
-    project.date_closed = "2020-09-19T13:35:00Z";
+    // project.category = "Mystery";
+    // project.date_closed = "2020-09-19T13:35:00Z";
+    // project.title = Book
+    // project.goal = 300
+    // project.image = ""
+
     project.is_open = true;
     if (
       project.title
@@ -130,18 +137,10 @@ function ProjectForm() {
         />
       </div>
       <div>
-        <label htmlFor="is_open">Open for donations?:</label>
-        <select type="select" id="is_open" onChange={handleChange} />
-        <select type="select" id="is_open">
-          <option value="true">Yes</option>
-          <option value="false">No</option>
-        </select>
-      </div>
-      <div>
         <label htmlFor="category">Genre:</label>
         <select
           type="select"
-          id="genre"
+          id="category"
           placeholder="Genre!"
           onChange={handleChange}
         >
