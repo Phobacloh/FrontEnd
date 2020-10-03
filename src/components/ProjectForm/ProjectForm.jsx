@@ -31,8 +31,6 @@ function ProjectForm() {
       ...prevProject,
       [id]: value,
     }));
-    const sel = document.getElementById("categories");
-    console.log(sel.value);
   };
 
   const postDataProject = async () => {
