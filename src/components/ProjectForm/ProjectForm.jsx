@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 // import token from ".utils/getToken/token";
-import "./ProjectForm.css";
+import "../../App.css";
 
 // import { Link } from "react-router-dom";
 
@@ -81,7 +81,7 @@ function ProjectForm() {
   };
   //template
   return (
-    <div id="project_form">
+    <div className="form">
       <h1>Show us what you've got!</h1>
       <p>
         Here's your opportunity to get booked! Tell us all about what you've

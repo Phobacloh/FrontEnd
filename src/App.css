@@ -12,10 +12,15 @@ h1 {
 
 h3 {
   font-size: 25px;
+  /* padding: 5px; */
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 h2 {
   font-size: 35px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 body {
   background-image: url("ricepaper.png");
@@ -112,6 +117,7 @@ a:active {
 #all {
   background-color: #baa6ff;
 }
+
 button {
   display: inline-block;
 
@@ -142,9 +148,10 @@ button:hover {
 
 form {
   display: inline-block;
-  text-align: center;
-  width: 100%;
-  margin: auto;
+  /* text-align: center; */
+  /* text-align: center; */
+  width: 70%;
+  /* margin: auto; */
 }
 input,
 select,
@@ -153,22 +160,27 @@ textarea {
   display: inline-block;
   height: 50px;
   border: none;
-  width: 70%;
+  width: 100%;
   margin: 2px;
+  background-color: #f9f9e3;
 }
 textarea {
   height: 100px;
 }
 label {
-  width: 30%;
+  /* width: 30%; */
   text-align: left;
   margin-top: 10px;
   display: inline-block;
   height: 10px;
   border: none;
-  width: 70%;
+  /* width: 70%; */
 }
-#project_form {
+.form {
   display: inline-block;
   text-align: center;
+  width: 100%;
+}
+#description_box {
+  background-color: #f9f9e3;
 }

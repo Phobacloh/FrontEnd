@@ -49,30 +49,34 @@ function LoginForm() {
   };
   //template
   return (
-    <form>
-      <div>
-        <label htmlFor="username">Nom de plume:</label>
-        <input
-          type="text"
-          id="username"
-          placeholder="What's your nom de plume?"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter your Password"
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit" onClick={handleSubmit}>
-        Login
-      </button>
-      <Link to="/register">Sign Up</Link>
-    </form>
+    <div className="form">
+      <form>
+        <div>
+          <label htmlFor="username"></label>
+          <input
+            type="text"
+            id="username"
+            placeholder="What's your nom de plume?"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="password"></label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your Password"
+            onChange={handleChange}
+          />
+        </div>
+        <button type="submit" onClick={handleSubmit}>
+          Login
+        </button>
+        <br></br>
+        <p>Not registered yet?</p>
+        <Link to="/register">Sign Up</Link>
+      </form>
+    </div>
   );
 }
 

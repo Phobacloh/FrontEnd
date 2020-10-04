@@ -37,29 +37,34 @@ function ProjectPage() {
 
   return (
     <div className="project_details">
-      <img className="project_image" alt="project" src={projectData.image} />
-      <div className="project_summary_details">
-        <h2>{projectData.title}</h2>
-        <Link to={`/profile/${userData.id}`}>
-          <h3>{projectData.owner}</h3>{" "}
-        </Link>
-        <p>{projectData.category}</p>
-        <p>{projectData.description}</p>
+      <div id="project_top">
+        <img className="project_image" alt="project" src={projectData.image} />
+
+        <div className="project_summary_details">
+          <h2>{projectData.title}</h2>
+          <Link to={`/profile/${userData.id}`}>
+            <h3>{projectData.owner}</h3>{" "}
+          </Link>
+          <p id="category_tag">{projectData.category}</p>
+          <p id="description_box">{projectData.description}</p>
+        </div>
       </div>
-      <h3>Funding Close Date:</h3>
-      <p>{projectData.date_closed}</p>
-      <h3> Pledges:</h3>
-      <ul>
-        {projectData.pledges.map((pledgeData) => {
-          return (
-            <li>
-              {pledgeData.amount} from {pledgeData.supporter}
-            </li>
-          );
-        })}
-      </ul>
-      <h3>Sample:</h3>
-      <p>{projectData.sample}</p>
+      <div id="project_contents">
+        {/* <h3>Funding Close Date:</h3>
+        <p>{projectData.date_closed}</p> */}
+        <h3>Sample:</h3>
+        <p id="sample">{projectData.sample}</p>
+        <h3> Pledges:</h3>
+        <ul>
+          {projectData.pledges.map((pledgeData) => {
+            return (
+              <li>
+                {pledgeData.amount} from {pledgeData.supporter}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
