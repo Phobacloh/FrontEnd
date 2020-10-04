@@ -1,19 +1,19 @@
-form {
+/* form {
   width: 90%;
   margin: auto;
 }
 
 label,
-input {
-  /* In order to define widths */
-  display: inline-block;
+input { */
+/* In order to define widths */
+/* display: inline-block;
   margin: 2px;
-}
-
+} */
+/* 
 label {
   width: 25%;
   text-align: left;
-}
+} */
 
 /* label + input {
   width: 30%;
