@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ProjectCard from "../components/projectcard/ProjectCard";
-import CategoriesCard from "../components/CategoryCard/categoriesCard";
 
 // import Logo from "../components/Logo";
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "../components/ProfilePage/ProfilePage.css";
 
 // import { projectData } from "../data";
 // import "../components/ProjectPage/ProjectPage.css";
@@ -23,7 +24,16 @@ function ProfilePage() {
   return (
     <div className="user_details">
       <h1>{userData.username} </h1>
-      <img className="profile_image" alt="profile pic" src={userData.image} />
+      <img
+        className="profile_pic"
+        alt="profile pic"
+        src={userData.profile_pic}
+      />
+      <p className="tagline">"{userData.tagline}"</p>
+      <div id="bio_div">
+        <h2>Bio</h2>
+        <p className="bio">{userData.bio}</p>
+      </div>
       {/* <div className="project_summary_details">
         <h2>{projectData.title}</h2>
         <h3>{projectData.owner}</h3>

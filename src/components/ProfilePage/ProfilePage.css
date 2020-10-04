@@ -1,0 +1,17 @@
+/* * {
+  border: solid;
+} */
+.profile_pic {
+  float: left;
+  width: 45%;
+  margin: 10px;
+  border-radius: 40px;
+}
+.tagline {
+  float: center;
+  font-style: italic;
+  font-size: larger;
+}
+#bio_div {
+  display: inline-block;
+}
