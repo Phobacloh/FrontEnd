@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-//THIS PAGE NEED HELP
+//THIS PAGE NEEDS HELP
 
 function CategoryNav() {
   //   return (

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { projectData } from "../data";
 import "../components/ProjectPage/ProjectPage.css";
 
 function ProjectPage() {
   const [projectData, setProjectData] = useState({ pledges: [] });
+  const [userData, setUserData] = useState([]);
   const { id } = useParams();
 
   const url = `${process.env.REACT_APP_API_URL}projects/${id}`;
@@ -18,12 +20,29 @@ function ProjectPage() {
         setProjectData(data);
       });
   }, [id]);
+
+  const urlUser = `${process.env.REACT_APP_API_URL}users/${id}`;
+  console.log({ urlUser });
+  useEffect(() => {
+    fetch(urlUser)
+      .then((results) => {
+        return results.json();
+      })
+      .then((data) => {
+        setUserData(data);
+      });
+  }, [id]);
+  console.log(projectData);
+  console.log(userData);
+
   return (
     <div className="project_details">
       <img className="project_image" alt="project" src={projectData.image} />
       <div className="project_summary_details">
         <h2>{projectData.title}</h2>
-        <h3>{projectData.owner}</h3>
+        <Link to={`/profile/${userData.id}`}>
+          <h3>{projectData.owner}</h3>{" "}
+        </Link>
         <p>{projectData.category}</p>
         <p>{projectData.description}</p>
       </div>
@@ -41,7 +60,6 @@ function ProjectPage() {
       </ul>
       <h3>Sample:</h3>
       <p>{projectData.sample}</p>
-      <h3>{`Status: ${projectData.is_open}`}</h3>
     </div>
   );
 }
