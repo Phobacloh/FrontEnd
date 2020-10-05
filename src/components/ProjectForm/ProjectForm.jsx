@@ -125,7 +125,7 @@ function ProjectForm() {
           />
         </div>
         <div>
-          <label htmlFor="date_closed">Closing Date:</label>
+          <label htmlFor="date_closed"></label>
           <input
             type="datetime-local"
             id="date_closed"
