@@ -15,6 +15,7 @@ import RegisterPage from "./pages/RegisterPage";
 import PostProjectPage from "./pages/PostProjectPage";
 import ProfilePage from "./pages/ProfilePage";
 import CategoriesPage from "./pages/CategoriesPage";
+import PledgePage from "./pages/PledgePage";
 /**
  * Main app component
  */
@@ -45,6 +46,9 @@ function App() {
             </Route>
             <Route path="/categories">
               <CategoriesPage />
+            </Route>
+            <Route path="/pledge">
+              <PledgePage />
             </Route>
             {/* <Route>
 
