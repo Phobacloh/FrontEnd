@@ -1,0 +1,13 @@
+#pledge_card {
+  width: 100%;
+  margin: auto;
+  /* border: 5px solid #bae1ff; */
+  border-radius: 40px;
+  /* box-shadow: 2px 7px 6px #bae1ff; */
+  background-color: #f9f9e3;
+  padding: 0px;
+}
+
+#pledge_comment {
+  font-style: italic;
+}

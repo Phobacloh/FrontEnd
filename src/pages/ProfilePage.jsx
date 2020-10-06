@@ -6,8 +6,16 @@ import "../components/ProfilePage/ProfilePage.css";
 // import "../components/ProjectPage/ProjectPage.css";
 
 function ProfilePage() {
-  const [userData, setUserData] = useState([]);
   const { id } = useParams();
+
+  const [userData, setUserData] = useState({
+    username: "",
+    email: "",
+    tagline: "",
+    bio: "",
+    profile_pic: "",
+    favorite_genre: "",
+  });
 
   const url = `${process.env.REACT_APP_API_URL}users/${id}`;
   console.log({ url });
@@ -33,6 +41,7 @@ function ProfilePage() {
       <div id="bio_div">
         <h2>Bio</h2>
         <p className="bio">{userData.bio}</p>
+        {/* <p className="bio">{userData.id}</p> */}
       </div>
       {/* <div className="project_summary_details">
         <h2>{projectData.title}</h2>

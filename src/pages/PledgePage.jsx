@@ -1,8 +1,8 @@
-import React from "react";
-import PledgeForm from "../components/PledgePage/PledgeForm";
+// import React from "react";
+// import PledgeForm from "../components/PledgePage/PledgeForm";
 
-function PledgePage() {
-  return <PledgeForm />;
-}
+// function PledgePage() {
+//   return <PledgeForm />;
+// }
 
-export default PledgePage;
+// export default PledgePage;
