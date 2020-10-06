@@ -2,19 +2,24 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 // import token from ".utils/getToken/token";
 import "../../App.css";
+import ProjectData from "../utils/projectData";
 
 // import { Link } from "react-router-dom";
 
-function PledgeForm() {
+function PledgeForm(props) {
   //variables
+  const { project_id } = props;
+  const projectData = { ProjectData };
 
   const token = window.localStorage.getItem("token");
   console.log(token);
+  console.log(projectData);
 
   const [pledge, setPledge] = useState({
     amount: "",
     comment: "",
-    anonymous: "",
+    anonymous: false,
+    project: project_id,
     supporter: "",
   });
   const history = useHistory();
@@ -50,29 +55,15 @@ function PledgeForm() {
     console.log(pledge.comment);
     console.log(pledge.project_id);
 
-    // project.category = "Mystery";
-    // project.date_closed = "2020-09-19T13:35:00Z";
-    // project.title = Book
-    // project.goal = 300
-    // project.image = ""
-
     pledge.anonymous = false;
-    if (
-      pledge.amount
-      //   project.description &&
-      //   project.goal &&
-      //   project.image &&
-      //   project.is_open &&
-      //   project.date_closed &&
-      //   project.sample &&
-      //   project.category
-    ) {
+    pledge.project_id = project_id;
+    if (pledge.amount) {
       postDataPledge().then((response) => {
         console.log(response);
         // window.localStorage.setItem("title", credentials.title);
 
         // if (response.token != null) {
-        history.push("/projects");
+        history.push("/project");
         // }
       });
     }
@@ -80,21 +71,9 @@ function PledgeForm() {
   //template
   return (
     <div className="form">
-      <h1>How much do you pledge?</h1>
-      <p>
-        Love what this author has to offer? Help them get off the ground and
-        publish their first novel!
-      </p>
+      <h1>Love it so far?</h1>
+      <p>Help them get off the ground and publish their first novel!</p>
       <form>
-        <div>
-          <label htmlFor="project_id"></label>
-          <input
-            type="number"
-            id="project_id"
-            placeholder="What are you pledging to?"
-            onChange={handleChange}
-          />
-        </div>
         <div>
           <label htmlFor="amount"></label>
           <input

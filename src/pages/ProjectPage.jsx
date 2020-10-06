@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import { projectData } from "../data";
 import "../components/ProjectPage/ProjectPage.css";
+import PledgeForm from "../components/PledgePage/PledgeForm";
 
 function ProjectPage() {
   const [projectData, setProjectData] = useState({ pledges: [] });
@@ -35,6 +36,17 @@ function ProjectPage() {
   console.log(projectData);
   console.log(userData);
 
+  // const getProjectId = (e) => {
+  //   window.localStorage.setItem("id", project.id);
+  //   window.localStorage.setItem("title", project.title);
+  //   console.log(projects.title);
+  // };
+
+  // const submitPledge = (event) => {
+  //     getProjectId(event.target.name);
+  //   }
+  // };
+
   return (
     <div className="project_details">
       {/* <div id="project_top"> */}
@@ -54,6 +66,7 @@ function ProjectPage() {
         <h3>Sample:</h3>
         <p id="sample_box">{projectData.sample}</p>
         <h3> Pledges:</h3>
+        <PledgeForm project_id={id} />
         <ul>
           {projectData.pledges.map((pledgeData) => {
             return (
