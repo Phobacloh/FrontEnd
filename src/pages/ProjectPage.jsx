@@ -87,6 +87,9 @@ function ProjectPage() {
           <PledgeForm project_id={id} />
         </div>
       </div>
+      <Link to={`/edit/${id}`}>
+        <p>Edit</p>
+      </Link>
     </div>
   );
 }

@@ -1,84 +1,71 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-// import token from ".utils/getToken/token";
-import "../../App.css";
+import React, { useState, useEffect } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import { isAuthenticated, setStorage } from "../utils/localStorage";
 
-// import { Link } from "react-router-dom";
-
-function ProjectForm() {
-  //variables
-
-  const token = window.localStorage.getItem("token");
-  console.log(token);
-
-  const [project, setProject] = useState({
-    title: "",
-    description: "",
-    goal: "",
-    image: "",
-    date_closed: "",
-    sample: "",
-    category: "",
-  });
+function EditProjectForm(props) {
+  const { projectData } = props;
+  console.log(projectData);
+  const [projectDetails, setProjectDetails] = useState([]);
   const history = useHistory();
-
-  //method
+  const { id } = useParams();
+  useEffect(() => {
+    setProjectDetails({
+      title: projectData.title,
+      description: projectData.description,
+      goal: projectData.goal,
+      image: projectData.image,
+      is_open: projectData.is_open,
+      owner: projectData.owner,
+    });
+  }, [projectData]);
+  //methods
+  //set state
   const handleChange = (e) => {
-    console.log(e);
     const { id, value } = e.target;
-    console.log("---->", id, value);
-    setProject((prevProject) => ({
-      ...prevProject,
+    setProjectDetails((prevProjectData) => ({
+      ...prevProjectData,
       [id]: value,
     }));
   };
-
-  const postDataProject = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}projects/`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `token ${token}`,
-      },
-      body: JSON.stringify(project),
-    });
-    console.log(response.status);
+  const postData = async () => {
+    const token = window.localStorage.getItem("token");
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}projects/${id}`,
+      {
+        method: "put",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `token ${token}`,
+        },
+        body: JSON.stringify(projectDetails),
+      }
+    );
     return response.json();
   };
-
+  //get token
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(project.date_closed);
-    console.log(project.title);
-    console.log(project.category);
-    project.is_open = true;
-    if (project.title) {
-      postDataProject().then((response) => {
-        console.log(response);
-        // window.localStorage.setItem("title", credentials.title);
-
-        // if (response.token != null) {
-        history.push("/projects");
-        // }
-      });
-    }
+    postData(isAuthenticated()).then((response) => {
+      setStorage(
+        "title",
+        projectDetails.title,
+        "description",
+        projectDetails.description
+      );
+      console.log(response);
+      history.push(`/project/${response.id}`);
+    });
   };
-
   //template
   return (
     <div className="form">
-      <h1>Show us what you've got!</h1>
-      <p>
-        Here's your opportunity to get booked! Tell us all about what you've
-        written and start gaining your adoring fans
-      </p>
       <form>
         <div>
           <label htmlFor="title"></label>
           <input
             type="text"
             id="title"
-            placeholder="Title"
+            value={projectDetails.title}
             onChange={handleChange}
           />
         </div>
@@ -87,7 +74,7 @@ function ProjectForm() {
           <input
             type="text"
             id="description"
-            placeholder="Description"
+            value={projectDetails.description}
             onChange={handleChange}
           />
         </div>
@@ -96,7 +83,7 @@ function ProjectForm() {
           <input
             type="number"
             id="goal"
-            placeholder="How much money do you hope to raise?"
+            value={projectDetails.goal}
             onChange={handleChange}
           />
         </div>
@@ -105,7 +92,7 @@ function ProjectForm() {
           <input
             type="url"
             id="image"
-            placeholder="Image URL"
+            value={projectDetails.image}
             onChange={handleChange}
           />
         </div>
@@ -114,7 +101,7 @@ function ProjectForm() {
           <input
             type="datetime-local"
             id="date_closed"
-            placeholder="Closing Date"
+            value={projectDetails.date_closed}
             onChange={handleChange}
           />
         </div>
@@ -123,7 +110,7 @@ function ProjectForm() {
           <textarea
             type="textarea"
             id="sample"
-            placeholder="Give us your most tantilizing chapter to get sponsors!"
+            value={projectDetails.sample}
             onChange={handleChange}
           />
         </div>
@@ -132,7 +119,7 @@ function ProjectForm() {
           <select
             type="select"
             id="category"
-            placeholder="Genre!"
+            value={projectDetails.category}
             onChange={handleChange}
           >
             <option value="Fantasy">Fantasy </option>
@@ -151,11 +138,11 @@ function ProjectForm() {
           </select>
         </div>
         <button type="submit" onClick={handleSubmit}>
-          Publish!
+          Update!
         </button>
       </form>
     </div>
   );
 }
 
-export default ProjectForm;
+export default EditProjectForm;
