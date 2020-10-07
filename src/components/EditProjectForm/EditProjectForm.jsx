@@ -22,8 +22,8 @@ function EditProjectForm(props) {
   //set state
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setProjectDetails((prevProjectData) => ({
-      ...prevProjectData,
+    setProjectDetails((prevProjectDetails) => ({
+      ...prevProjectDetails,
       [id]: value,
     }));
   };
@@ -50,7 +50,11 @@ function EditProjectForm(props) {
         "title",
         projectDetails.title,
         "description",
-        projectDetails.description
+        projectDetails.description,
+        "goal",
+        projectDetails.goal,
+        "image",
+        projectDetails.image
       );
       console.log(response);
       history.push(`/project/${response.id}`);

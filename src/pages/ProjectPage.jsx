@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../components/ProjectPage/ProjectPage.css";
 import PledgeForm from "../components/PledgeForm/PledgeForm";
 import "../components/PledgeCard/PledgeCard.css";
+import DeleteProject from "../components/DeleteProject/DeleteProject";
 
 function ProjectPage() {
   const [userData, setUserData] = useState({});
@@ -90,6 +91,9 @@ function ProjectPage() {
       <Link to={`/edit/${id}`}>
         <p>Edit</p>
       </Link>
+      <div>
+        <DeleteProject />
+      </div>
     </div>
   );
 }
