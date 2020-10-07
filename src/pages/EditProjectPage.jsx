@@ -7,13 +7,11 @@ import "../App.css";
 import { isAuthenticated } from "../components/utils/localStorage";
 
 function EditProjectPage() {
-  const [projectData, setProjectData] = useState({ pledges: [] });
+  const [projectData, setProjectData] = useState();
   const { id } = useParams();
-  console.log({ id });
 
-  const urlProject = `${process.env.REACT_APP_API_URL}projects/${id}`;
-  console.log({ urlProject });
   useEffect(() => {
+    const urlProject = `${process.env.REACT_APP_API_URL}projects/${id}`;
     fetch(urlProject)
       .then((results) => {
         return results.json();
@@ -24,7 +22,11 @@ function EditProjectPage() {
   }, [id]);
 
   if (isAuthenticated()) {
-    return <EditProjectForm projectData={projectData} />;
+    return projectData != null ? (
+      <EditProjectForm projectData={projectData} />
+    ) : (
+      <h4>Loading....</h4>
+    );
     // }
     // return (
     //   <Link id="nav-link" to="/login">

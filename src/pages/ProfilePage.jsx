@@ -6,7 +6,7 @@ import "../components/ProfilePage/ProfilePage.css";
 // import "../components/ProjectPage/ProjectPage.css";
 
 function ProfilePage() {
-  const { id } = useParams();
+  const { username } = useParams();
 
   const [userData, setUserData] = useState({
     username: "",
@@ -17,7 +17,7 @@ function ProfilePage() {
     favorite_genre: "",
   });
 
-  const url = `${process.env.REACT_APP_API_URL}users/${id}`;
+  const url = `${process.env.REACT_APP_API_URL}users/${username}`;
   console.log({ url });
   useEffect(() => {
     fetch(url)
@@ -27,7 +27,7 @@ function ProfilePage() {
       .then((data) => {
         setUserData(data);
       });
-  }, [id]);
+  }, [username]);
 
   return (
     <div className="user_details">

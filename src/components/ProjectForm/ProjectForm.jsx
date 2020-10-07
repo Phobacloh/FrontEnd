@@ -121,7 +121,7 @@ function ProjectForm() {
         <div>
           <label htmlFor="sample"></label>
           <textarea
-            type="textarea"
+            type="text"
             id="sample"
             placeholder="Give us your most tantilizing chapter to get sponsors!"
             onChange={handleChange}

@@ -7,11 +7,10 @@ import "../components/PledgeCard/PledgeCard.css";
 import DeleteProject from "../components/DeleteProject/DeleteProject";
 
 function ProjectPage() {
-  const [userData, setUserData] = useState({});
   const [projectData, setProjectData] = useState({ pledges: [] });
   const { id } = useParams();
 
-  const url = `${process.env.REACT_APP_API_URL}users/${id}`;
+  const url = `${process.env.REACT_APP_API_URL}projects/${id}`;
   console.log({ url });
   useEffect(() => {
     fetch(url)
@@ -19,32 +18,9 @@ function ProjectPage() {
         return results.json();
       })
       .then((data) => {
-        setUserData(data);
-      });
-  }, [id]);
-
-  const urlProject = `${process.env.REACT_APP_API_URL}projects/${id}`;
-  console.log({ urlProject });
-  useEffect(() => {
-    fetch(urlProject)
-      .then((results) => {
-        return results.json();
-      })
-      .then((data) => {
         setProjectData(data);
       });
   }, [id]);
-
-  // const getProjectId = (e) => {
-  //   window.localStorage.setItem("id", project.id);
-  //   window.localStorage.setItem("title", project.title);
-  //   console.log(projects.title);
-  // };
-
-  // const submitPledge = (event) => {
-  //     getProjectId(event.target.name);
-  //   }
-  // };
 
   return (
     <div>
@@ -54,11 +30,11 @@ function ProjectPage() {
         {/* </div> */}
         <div className="project_summary_details">
           <h2>{projectData.title}</h2>
-          <Link to={`/profile/${userData.id}`}>
+          <Link to={`/profile/${projectData.owner}`}>
             <h3>{projectData.owner}</h3>
           </Link>
           <p id="category_tag">{projectData.category}</p>
-          <p>here{userData.id}</p>
+          <p>here{projectData.owner}</p>
           <p id="description_box">{projectData.description}</p>
         </div>
         <div id="project_contents">
@@ -73,7 +49,7 @@ function ProjectPage() {
               return (
                 // <li>
                 <div>
-                  <Link to={`/profile/${userData.id}`}>
+                  <Link to={`/profile/${projectData.owner}`}>
                     {pledgeData.supporter}
                   </Link>{" "}
                   pledged ${pledgeData.amount} to {projectData.title}

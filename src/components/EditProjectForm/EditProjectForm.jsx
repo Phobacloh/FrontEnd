@@ -2,22 +2,22 @@ import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { isAuthenticated, setStorage } from "../utils/localStorage";
 
-function EditProjectForm(props) {
-  const { projectData } = props;
-  console.log(projectData);
-  const [projectDetails, setProjectDetails] = useState([]);
+function EditProjectForm({ projectData }) {
+  console.log("---->", projectData);
+  const [projectDetails, setProjectDetails] = useState({
+    title: projectData.title,
+    description: projectData.description,
+    goal: projectData.goal,
+    image: projectData.image,
+    is_open: projectData.is_open,
+    owner: projectData.owner,
+    date_closed: projectData.date_closed,
+    sample: projectData.sample,
+    category: projectData.category,
+  });
   const history = useHistory();
   const { id } = useParams();
-  useEffect(() => {
-    setProjectDetails({
-      title: projectData.title,
-      description: projectData.description,
-      goal: projectData.goal,
-      image: projectData.image,
-      is_open: projectData.is_open,
-      owner: projectData.owner,
-    });
-  }, [projectData]);
+
   //methods
   //set state
   const handleChange = (e) => {
@@ -27,6 +27,7 @@ function EditProjectForm(props) {
       [id]: value,
     }));
   };
+
   const postData = async () => {
     const token = window.localStorage.getItem("token");
     const response = await fetch(
@@ -46,17 +47,6 @@ function EditProjectForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     postData(isAuthenticated()).then((response) => {
-      setStorage(
-        "title",
-        projectDetails.title,
-        "description",
-        projectDetails.description,
-        "goal",
-        projectDetails.goal,
-        "image",
-        projectDetails.image
-      );
-      console.log(response);
       history.push(`/project/${response.id}`);
     });
   };
@@ -112,7 +102,6 @@ function EditProjectForm(props) {
         <div>
           <label htmlFor="sample"></label>
           <textarea
-            type="textarea"
             id="sample"
             value={projectDetails.sample}
             onChange={handleChange}
