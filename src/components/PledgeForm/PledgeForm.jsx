@@ -75,7 +75,9 @@ function PledgeForm(props) {
   return (
     <div className="form">
       <h1>Love it so far?</h1>
-      <p>Help them get off the ground and publish their first novel!</p>
+      <p>
+        Help your next favorite author get off the ground and onto your shelf!
+      </p>
       <form>
         <div>
           <label htmlFor="amount"></label>

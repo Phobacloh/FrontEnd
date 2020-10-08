@@ -36,7 +36,7 @@ function ProjectPage() {
           <h3>{projectData.owner}</h3>
         </Link>
         <div id={projectData.category}>{projectData.category}</div>
-        <h4 id="category_tag">{projectData.category}</h4>
+        <h2>${projectData.goal}</h2>
         <p id="description_box">{projectData.description}</p>
       </div>
       <div id="project_contents">
