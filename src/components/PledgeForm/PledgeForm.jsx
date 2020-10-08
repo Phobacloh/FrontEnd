@@ -16,13 +16,14 @@ function PledgeForm(props) {
   console.log(token);
   console.log(username);
   console.log(projectData);
+  console.log(project_id);
 
   const [pledge, setPledge] = useState({
     amount: "",
     comment: "",
     anonymous: false,
     project: project_id,
-    supporter: "",
+    supporter: username,
   });
   const history = useHistory();
 
@@ -87,8 +88,8 @@ function PledgeForm(props) {
         </div>
         <div>
           <label htmlFor="comment"></label>
-          <input
-            type="text"
+          <textarea
+            type="textarea"
             id="comment"
             placeholder="Comment"
             onChange={handleChange}

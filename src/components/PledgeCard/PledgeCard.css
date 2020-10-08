@@ -1,13 +1,39 @@
-#pledge_card {
-  width: 100%;
-  margin: auto;
-  /* border: 5px solid #bae1ff; */
-  border-radius: 40px;
-  /* box-shadow: 2px 7px 6px #bae1ff; */
-  background-color: #f9f9e3;
-  padding: 0px;
+div#pledge_comment {
+  font-style: italic;
 }
 
-#pledge_comment {
-  font-style: italic;
+div#pledge_card {
+  display: block;
+  width: 90%;
+  min-height: 90px;
+  border: 3px solid var(--primary);
+  margin: calc(10vh - 50px) auto 0 auto;
+  box-shadow: 5px -5px 0 -3px var(--background), 5px -5px var(--green),
+    10px -10px 0 -3px var(--background), 10px -10px var(--yellow),
+    15px -15px 0 -3px var(--background), 15px -15px var(--orange),
+    20px -20px 0 -3px var(--background), 20px -20px var(--red);
+  transition: box-shadow 1s, top 1s, left 1s;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  background-color: #f9f9e3;
+}
+div#pledge_card:hover {
+  top: -20px;
+  left: 20px;
+  box-shadow: 0 0 0 -3px var(--background), 0 0 0 0 var(--green),
+    0 0 0 -3px var(--background), 0 0 0 0 var(--yellow),
+    0 0 0 -3px var(--background), 0 0 0 0 var(--orange),
+    0 0 0 -3px var(--background), 0 0 0 0 var(--red);
+}
+
+:root {
+  --primary: #bae1ff;
+  --secondary: #baa6ff;
+  --background: #f9f9e3;
+  --green: #baffb3;
+  --yellow: #fdf398;
+  --orange: #ffd2b3;
+  --red: #ffb3ba;
 }
