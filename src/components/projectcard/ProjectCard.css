@@ -76,3 +76,70 @@
   /* letter-spacing: 0.5px; */
   margin-bottom: 5px;
 }
+
+span#Fantasy,
+span#Graphic-Novels-and-Comics,
+span#Historical-Fiction,
+span#Horror,
+span#Non-Fiction,
+span#Poetry,
+span#Romance,
+span#Sci-Fi,
+span#Thriller,
+span#Young-Adult,
+span#Mystery {
+  display: inline-block;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin: 0px;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Antic Slab", serif;
+  font-size: small;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+}
+
+span#Fantasy {
+  background-color: #ffb3ba;
+}
+
+span#Graphic-Novels-and-Comics {
+  background-color: #ffd2b3;
+}
+
+span#Historical-Fiction {
+  background-color: #fdf398;
+}
+
+span#Horror {
+  background-color: #baffb3;
+}
+
+span#Non-Fiction {
+  background-color: #bae1ff;
+}
+span#Poetry {
+  background-color: #baa6ff;
+}
+span#Romance {
+  background-color: #ffb3ba;
+}
+
+span#Sci-Fi {
+  background-color: #ffd2b3;
+}
+span#Thriller {
+  background-color: #fdf398;
+}
+span#Young-Adult {
+  background-color: #baffb3;
+}
+span#Mystery {
+  background-color: #bae1ff;
+}

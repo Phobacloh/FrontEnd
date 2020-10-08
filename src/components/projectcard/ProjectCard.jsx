@@ -11,7 +11,8 @@ function ProjectCard(props) {
           <img alt="" src={projectData.image} />
           <div className="card_text">
             <h3>{projectData.title}</h3>
-            <span className="category_tag">{projectData.category}</span>
+            <span id={projectData.category}>{projectData.category}</span>
+            <p>{projectData.owner}</p>
             <p>{projectData.description}</p>
           </div>
         </Link>

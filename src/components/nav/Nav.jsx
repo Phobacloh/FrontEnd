@@ -18,6 +18,8 @@ function Nav() {
   const handleLogout = () => {
     clearStorage();
   };
+  let user = window.localStorage.getItem("username");
+  console.log(user);
   //template
   return (
     <div>
@@ -27,7 +29,7 @@ function Nav() {
         </Link>
         {isloggedin ? (
           <Link id="nav-link" to="/login" onClick={handleLogout}>
-            Logout {getStorage("user")}
+            Hello, {user} Logout {getStorage("user")}
           </Link>
         ) : (
           <Link id="nav-link" to="/login">

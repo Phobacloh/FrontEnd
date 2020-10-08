@@ -5,6 +5,10 @@ import "../components/ProjectPage/ProjectPage.css";
 import PledgeForm from "../components/PledgeForm/PledgeForm";
 import "../components/PledgeCard/PledgeCard.css";
 import DeleteProject from "../components/DeleteProject/DeleteProject";
+import { isAuthenticated } from "../components/utils/localStorage";
+
+let user = window.localStorage.getItem("user");
+console.log(user);
 
 function ProjectPage() {
   const [projectData, setProjectData] = useState({ pledges: [] });
@@ -22,9 +26,7 @@ function ProjectPage() {
       });
   }, [id]);
 
-  console.log({ projectData });
-
-  return (
+  return projectData != null ? (
     <div>
       <div className="project_details">
         {/* <div id="project_top"> */}
@@ -47,6 +49,22 @@ function ProjectPage() {
             {projectData.sample
               ? projectData.sample.split("\n").map((t, i) => <p key={i}>{t}</p>)
               : null}
+            {isAuthenticated && user === projectData.owner ? (
+              <div>
+                <div>
+                  <Link to={`/edit/${id}`}>
+                    <a>Edit</a>
+                  </Link>
+                </div>
+                <div>
+                  <Link to={`/delete/${id}`}>
+                    <a>Delete</a>
+                  </Link>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
           <h3> Pledges:</h3>
           <div id="pledge_card">
@@ -70,14 +88,9 @@ function ProjectPage() {
           <PledgeForm project_id={id} />
         </div>
       </div>
-      <Link to={`/edit/${id}`}>
-        <p>Edit</p>
-      </Link>
-      <div>
-        <DeleteProject />
-      </div>
     </div>
+  ) : (
+    <h4>Loading....</h4>
   );
 }
-
 export default ProjectPage;

@@ -42,7 +42,9 @@ function DeleteProject() {
   };
   //template
   return (
-    <div>
+    <div className="delete_page">
+      <h3>Are you sure you want to delete this masterpiece?</h3>
+      <p>Think of your fans!</p>
       <button type="submit" onClick={handleSubmit}>
         Delete
       </button>

@@ -15,6 +15,7 @@ import RegisterPage from "./pages/RegisterPage";
 import PostProjectPage from "./pages/PostProjectPage";
 import ProfilePage from "./pages/ProfilePage";
 import EditProjectPage from "./pages/EditProjectPage";
+import DeleteProjectPage from "./pages/DeleteProjectPage";
 // import CategoriesPage from "./pages/CategoriesPage";
 // import PledgePage from "./pages/PledgePage";
 /**
@@ -48,12 +49,9 @@ function App() {
             <Route path="/edit/:id">
               <EditProjectPage />
             </Route>
-            {/* <Route path="/pledge">
-              <PledgePage />
-            </Route> */}
-            {/* <Route>
-
-            </Route> */}
+            <Route path="/delete/:id">
+              <DeleteProjectPage />
+            </Route>
             <Route path="/">
               <Home />
             </Route>

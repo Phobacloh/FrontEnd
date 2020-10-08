@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   width: 95%;
-  margin: 0;
+  margin: 30px;
 }
 
 .project_image {
@@ -57,7 +57,7 @@
   --red: #ffb3ba;
 }
 
-#Fantasy {
+div#Fantasy {
   display: inline-block;
 
   padding: 0.3em 1.2em;
@@ -76,7 +76,7 @@
   background-color: #ffb3ba;
 }
 
-#Graphic-Novels-and-Comics {
+div#Graphic-Novels-and-Comics {
   display: inline-block;
 
   padding: 0.3em 1.2em;
@@ -95,7 +95,7 @@
   background-color: #ffd2b3;
 }
 
-#Historical-Fiction {
+div#Historical-Fiction {
   display: inline-block;
 
   padding: 0.3em 1.2em;
@@ -114,7 +114,7 @@
   background-color: #fdf398;
 }
 
-#Horror {
+div#Horror {
   display: inline-block;
 
   padding: 0.3em 1.2em;
@@ -133,7 +133,7 @@
   background-color: #baffb3;
 }
 
-#Non-Fiction {
+div#Non-Fiction {
   display: inline-block;
 
   padding: 0.3em 1.2em;
@@ -151,7 +151,7 @@
   transition: all 0.2s;
   background-color: #bae1ff;
 }
-#Poetry {
+div#Poetry {
   display: inline-block;
 
   padding: 0.3em 1.2em;
@@ -169,11 +169,10 @@
   transition: all 0.2s;
   background-color: #baa6ff;
 }
-#Romance {
+div#Romance {
   display: inline-block;
 
   padding: 0.3em 1.2em;
-  /* margin: 0 0.1em 0.1em 0; */
   margin: 2px;
   border: 0.16em solid rgba(255, 255, 255, 0);
   border-radius: 2em;
@@ -182,12 +181,11 @@
   font-family: "Antic Slab", serif;
   font-weight: 300;
   color: #ffffff;
-  /* text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35); */
   text-align: center;
   transition: all 0.2s;
   background-color: #ffb3ba;
 }
-#Sci-Fi {
+div#Sci-Fi {
   display: inline-block;
 
   padding: 0.3em 1.2em;
@@ -205,7 +203,7 @@
   transition: all 0.2s;
   background-color: #ffd2b3;
 }
-#Thriller {
+div#Thriller {
   display: inline-block;
 
   padding: 0.3em 1.2em;
@@ -223,7 +221,7 @@
   transition: all 0.2s;
   background-color: #fdf398;
 }
-#Young-Adult {
+div#Young-Adult {
   display: inline-block;
 
   padding: 0.3em 1.2em;
@@ -241,7 +239,7 @@
   transition: all 0.2s;
   background-color: #baffb3;
 }
-#Mystery {
+div#Mystery {
   display: inline-block;
 
   padding: 0.3em 1.2em;
@@ -259,6 +257,6 @@
   transition: all 0.2s;
   background-color: #bae1ff;
 }
-#All {
+div#All {
   background-color: #baa6ff;
 }

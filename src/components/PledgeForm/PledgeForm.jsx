@@ -12,7 +12,9 @@ function PledgeForm(props) {
   const projectData = { ProjectData };
 
   const token = window.localStorage.getItem("token");
+  const username = window.localStorage.getItem("user");
   console.log(token);
+  console.log(username);
   console.log(projectData);
 
   const [pledge, setPledge] = useState({
