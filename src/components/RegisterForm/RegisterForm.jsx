@@ -52,38 +52,40 @@ function RegisterForm() {
   };
   //template
   return (
-    <form>
-      <div>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          placeholder="What's your nom de plume?"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter your Password"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Enter your email"
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit" onClick={handleSubmit}>
-        Sign Up
-      </button>
-    </form>
+    <div className="form">
+      <form>
+        <div>
+          <label htmlFor="username"></label>
+          <input
+            type="text"
+            id="username"
+            placeholder="What's your nom de plume?"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="password"></label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your Password"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="email"></label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            onChange={handleChange}
+          />
+        </div>
+        <button type="submit" onClick={handleSubmit}>
+          Sign Up
+        </button>
+      </form>
+    </div>
   );
 }
 

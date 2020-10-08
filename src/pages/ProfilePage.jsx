@@ -31,13 +31,19 @@ function ProfilePage() {
 
   return (
     <div className="user_details">
-      <h1>{userData.username} </h1>
+      <h1 className="username_profile">{userData.username} </h1>
       <img
         className="profile_pic"
         alt="profile pic"
         src={userData.profile_pic}
       />
-      <p className="tagline">"{userData.tagline}"</p>
+      <div className="tagline_box">
+        <p className="tagline">"{userData.tagline}"</p>
+      </div>
+      <div className="category_profile">
+        <h2>Favorite Genre</h2>
+        <p>{userData.favorite_genre}</p>
+      </div>
       <div id="bio_div">
         <h2>Bio</h2>
         <p className="bio">{userData.bio}</p>
