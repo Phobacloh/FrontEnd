@@ -136,10 +136,10 @@ function ProjectForm() {
             onChange={handleChange}
           >
             <option value="Fantasy">Fantasy </option>
-            <option value="Graphic Novels & Comics">
+            <option value="Graphic-Novels-&-Comics">
               Graphic Novels & Comics{" "}
             </option>
-            <option value="Historical Fiction">Historical Fiction</option>
+            <option value="Historical-Fiction">Historical Fiction</option>
             <option value="Horror">Horror </option>
             <option value="Mystery">Mystery </option>
             <option value="Non-Fiction">Non-Fiction </option>
@@ -147,7 +147,7 @@ function ProjectForm() {
             <option value="Romance">Romance </option>
             <option value="Sci-Fi">Sci-Fi </option>
             <option value="Thriller">Thriller </option>
-            <option value="Young Adult">Young Adult </option>
+            <option value="Young-Adult">Young Adult </option>
           </select>
         </div>
         <button type="submit" onClick={handleSubmit}>

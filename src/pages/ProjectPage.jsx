@@ -35,8 +35,8 @@ function ProjectPage() {
           <Link to={`/profile/${projectData.owner}`}>
             <h3>{projectData.owner}</h3>
           </Link>
-          <p id="category_tag">{projectData.category}</p>
-          <p>here{projectData.owner}</p>
+          <div id={projectData.category}>{projectData.category}</div>
+          <h4 id="category_tag">{projectData.category}</h4>
           <p id="description_box">{projectData.description}</p>
         </div>
         <div id="project_contents">

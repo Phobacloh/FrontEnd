@@ -37,7 +37,7 @@ function HomePage() {
       <div id="category_buttons">
         <button
           type="button"
-          id="fantasy"
+          id="Fantasy"
           name="Fantasy"
           onClick={changeFilter}
         >
@@ -45,48 +45,48 @@ function HomePage() {
         </button>
         <button
           type="button"
-          id="comics"
-          name="Graphic Novels & Comics"
+          id="Graphic-Novels-and-Comics"
+          name="Graphic-Novels-and-Comics"
           onClick={changeFilter}
         >
           Graphic Novels & Comics
         </button>
         <button
           type="button"
-          id="historical_fiction"
-          name="Historical Fiction"
+          id="Historical-Fiction"
+          name="Historical-Fiction"
           onClick={changeFilter}
         >
           Historical Fiction
         </button>
-        <button type="button" id="horror" name="Horror" onClick={changeFilter}>
+        <button type="button" id="Horror" name="Horror" onClick={changeFilter}>
           Horror
         </button>
         <button
           type="button"
-          id="non_fiction"
+          id="Non-Fiction"
           name="Non-Fiction"
           onClick={changeFilter}
         >
           Non-Fiction
         </button>
-        <button type="button" id="poetry" name="Poetry" onClick={changeFilter}>
+        <button type="button" id="Poetry" name="Poetry" onClick={changeFilter}>
           Poetry
         </button>
         <button
           type="button"
-          id="romance"
+          id="Romance"
           name="Romance"
           onClick={changeFilter}
         >
           Romance
         </button>
-        <button type="button" id="scifi" name="Sci-Fi" onClick={changeFilter}>
+        <button type="button" id="Sci-Fi" name="Sci-Fi" onClick={changeFilter}>
           Sci-Fi
         </button>
         <button
           type="button"
-          id="thriller"
+          id="Thriller"
           name="Thriller"
           onClick={changeFilter}
         >
@@ -94,21 +94,21 @@ function HomePage() {
         </button>
         <button
           type="button"
-          id="young_adult"
-          name="Young Adult"
+          id="Young-Adult"
+          name="Young-Adult"
           onClick={changeFilter}
         >
           Young Adult
         </button>
         <button
           type="button"
-          id="mystery"
+          id="Mystery"
           name="Mystery"
           onClick={changeFilter}
         >
           Mystery
         </button>
-        <button type="button" id="all" name="All" onClick={changeFilter}>
+        <button type="button" id="All" name="All" onClick={changeFilter}>
           All
         </button>
       </div>
