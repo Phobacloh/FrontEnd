@@ -1,6 +1,5 @@
 import React from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { isAuthenticated, clearStorage } from "../utils/localStorage";
 
 function DeleteProject() {
   const history = useHistory();
