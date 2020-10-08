@@ -22,6 +22,8 @@ function ProjectPage() {
       });
   }, [id]);
 
+  console.log({ projectData });
+
   return (
     <div>
       <div className="project_details">
@@ -41,7 +43,11 @@ function ProjectPage() {
           {/* <h3>Funding Close Date:</h3>
         <p>{projectData.date_closed}</p> */}
           <h3>Sample:</h3>
-          <p id="sample_box">{projectData.sample}</p>
+          <div id="sample_box">
+            {projectData.sample
+              ? projectData.sample.split("\n").map((t, i) => <p key={i}>{t}</p>)
+              : null}
+          </div>
           <h3> Pledges:</h3>
           <div id="pledge_card">
             {/* <ul> */}

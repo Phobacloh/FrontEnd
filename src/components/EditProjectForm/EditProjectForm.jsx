@@ -11,7 +11,7 @@ function EditProjectForm({ projectData }) {
     image: projectData.image,
     is_open: projectData.is_open,
     owner: projectData.owner,
-    date_closed: projectData.date_closed,
+    date_closed: projectData.date_closed.substr(0, 19),
     sample: projectData.sample,
     category: projectData.category,
   });

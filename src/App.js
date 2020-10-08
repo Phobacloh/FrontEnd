@@ -42,7 +42,7 @@ function App() {
             <Route path="/post_project">
               <PostProjectPage />
             </Route>
-            <Route path="/profile/:id">
+            <Route path="/profile/:username">
               <ProfilePage />
             </Route>
             <Route path="/edit/:id">
